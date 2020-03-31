@@ -28,7 +28,7 @@ const ProfileCreate = props => {
       data: { profile }
     })
       .then(res => setCreatedProfileId(res.data.profile._id))
-      .catch(console.error)
+      .catch()
   }
 
   if (createdProfileId) {

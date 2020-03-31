@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Footer = () => (
-  <p>Created by Patricia Antlitz.</p>
+  <div>
+    <p>Created by Patricia Antlitz.</p>
+  </div>
 )
 
 export default Footer

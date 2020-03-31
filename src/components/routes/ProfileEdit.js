@@ -20,7 +20,7 @@ const ProfileEdit = props => {
     })
       // Make sure to update this.setState to our hooks setMovie function
       .then(res => setProfile(res.data.profile))
-      .catch(console.error)
+      .catch()
   }, [])
 
   const handleChange = event => {
@@ -42,7 +42,7 @@ const ProfileEdit = props => {
       data: { profile }
     })
       .then(() => setUpdate(true))
-      .catch(console.error)
+      .catch()
   }
   //
   // const { movie, updated } = this.state

@@ -16,7 +16,7 @@ const Profiles = props => {
       }
     })
       .then(res => setProfiles(res.data.profiles))
-      .catch(console.error)
+      .catch()
   }, [])
 
   const profilesList = profiles.map(profile => (

@@ -1,10 +1,15 @@
 import React from 'react'
-import Layout from '../../shared/Layout'
+import Footer from '../../shared/Footer'
+import styled from 'styled-components'
+
+const Foot = styled.div`
+  background: rgb(215,215,215);
+`
 
 const Home = () => (
-  <Layout>
-    <h4>Welcome to Hired!</h4>
-  </Layout>
+  <Foot>
+    <Footer/>
+  </Foot>
 )
 
 export default Home

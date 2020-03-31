@@ -22,7 +22,7 @@ const Profile = props => {
     })
       // Make sure to update this.setState to our hooks setMovie function
       .then(res => setProfile(res.data.profile))
-      .catch(console.error)
+      .catch()
   }, [])
 
   const destroy = () => {
@@ -34,7 +34,7 @@ const Profile = props => {
       }
     })
       .then(() => setDeleted(true))
-      .catch(console.error)
+      .catch()
   }
 
   if (!profile) {
