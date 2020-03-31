@@ -38,7 +38,8 @@ const ProfileEdit = props => {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${props.user.token}`
-      }
+      },
+      data: { profile }
     })
       .then(() => setUpdate(true))
       .catch(console.error)
