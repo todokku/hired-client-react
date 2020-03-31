@@ -9,6 +9,12 @@ import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 
+import Profiles from '../routes/Profiles'
+import Profile from '../routes/Profile'
+import ProfileEdit from '../routes/ProfileEdit'
+import ProfileCreate from '../routes/ProfileCreate'
+import Home from '../routes/Home'
+
 class App extends Component {
   constructor () {
     super()
@@ -42,6 +48,7 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' component={Home} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
@@ -53,6 +60,18 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute exact user={user} path='/profiles' render={() => (
+            <Profiles msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute exact user={user} path='/profiles/:id' render={({ match }) => (
+            <Profile match={match} msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute exact user={user} path='/create-profile' render={() => (
+            <ProfileCreate msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute exact user={user} path='/profiles/:id/edit' render={({ match }) => (
+            <ProfileEdit match={match} msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
