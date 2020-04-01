@@ -55,7 +55,7 @@ const unauthBody = (
 
 const alwaysOptions = (
   <Fragment>
-    <Nav.Link to="/">Home</Nav.Link>
+    <Nav.Link href='/'>Home</Nav.Link>
   </Fragment>
 )
 

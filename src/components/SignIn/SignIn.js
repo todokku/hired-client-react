@@ -1,11 +1,32 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import styled from 'styled-components'
+import Home from '../routes/Home'
+
+const SpaceDiv = styled.div`
+  margin-bottom: 100px;
+`
+const ButtonS = styled.button`
+  text-align: center;
+  border-radius: 33px;
+  border: 2px solid #edb442;
+  background: #edb442;
+  color: #00235c;
+  padding: 8px 40px;
+  margin-top: 20px;
+  justifyContent: "center";
+  alignItems: "center";
+  :hover {
+background: #00235c;
+color: #fff;
+cursor: pointer;
+}
+`
 
 class SignIn extends Component {
   constructor () {
@@ -52,34 +73,40 @@ class SignIn extends Component {
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
-            <Form.Group controlId="email">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                required
-                type="email"
-                name="email"
-                value={email}
-                placeholder="Enter email"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                required
-                name="password"
-                value={password}
-                type="password"
-                placeholder="Password"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
+            <SpaceDiv>
+              <Form.Group controlId="email">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  required
+                  type="email"
+                  name="email"
+                  value={email}
+                  placeholder="Enter email"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  required
+                  name="password"
+                  value={password}
+                  type="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <ButtonS
+                variant="primary"
+                type="submit"
+              >
               Submit
-            </Button>
+              </ButtonS> {' '}
+              <Link to="/">
+                <ButtonS type="submit" variant="primary">Cancel</ButtonS>
+              </Link>
+            </SpaceDiv>
+            <Home />
           </Form>
         </div>
       </div>
