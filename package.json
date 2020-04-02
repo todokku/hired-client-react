@@ -12,6 +12,7 @@
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
     "fs-extra": "3.0.1",
+    "gh-pages": "^2.2.0",
     "jquery": "^1.9.1",
     "mdbreact": "^4.25.5",
     "object-assign": "4.1.1",
