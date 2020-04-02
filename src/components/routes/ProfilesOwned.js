@@ -12,9 +12,8 @@ const Inline = styled.div`
 `
 
 const Candidates = styled.div`
-  background: #fafafa;
+  background: rgba(113,185,255,.4);
   border-radius: 10px;
-  box-shadow: 10px 10px 10px rgba(215,215,215,.8);
   font-size: 20px;
   height: 300px;
   width: 500px;
@@ -28,18 +27,19 @@ const Name = styled.h2`
 `
 
 const Title = styled.p`
-  color: #edb442;
+  color: #d1941b;
   text-align: center;
   font-size: 18px;
   font-style: italic;
 `
 const Content = styled.h6`
   color: #00235c;
+  text-align: center;
 `
 
 const Description = styled.h5`
   text-align: center;
-  color: #edb442;
+  color: #d1941b;
   padding: 10px 0 0;
 `
 const Paragraph = styled.p`
@@ -69,14 +69,13 @@ const ProfilesOwned = props => {
           <Name>{profile.name}</Name>
         </div>
         <div>
-          <Title>{profile.title} <Content> {profile.location}</Content> </Title>
+          <Title>{profile.title}</Title> <Content>{profile.location}</Content>
         </div>
         <div>
           <Description>Short Description:</Description>
-          <Paragraph>{profile.name} is a {profile.title}
-           who is current located in {profile.location}...</Paragraph>
+          <Paragraph>{profile.name} is a {profile.title} who is current located in {profile.location}...</Paragraph>
         </div>
-        <Link to={`/profiles/${profile._id}`} primary>See More</Link>
+        <Link to={`/profiles/owned/${profile._id}`}>See More</Link>
       </Candidates>
     </Inline>
   ))

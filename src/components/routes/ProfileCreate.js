@@ -51,7 +51,7 @@ const ProfileCreate = props => {
         profile={profile}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
-        cancelPath="/"
+        cancelPath="/profiles"
       />
     </div>
   )

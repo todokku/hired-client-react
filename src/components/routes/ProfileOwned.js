@@ -21,7 +21,7 @@ const Profile = props => {
   // similar to componentDidMount
   useEffect(() => {
     axios({
-      url: `${apiUrl}/profiles/${props.match.params.id}`,
+      url: `${apiUrl}/profiles/owned/${props.match.params.id}`,
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${props.user.token}`
@@ -54,28 +54,6 @@ const Profile = props => {
     } />
   }
 
-  if (profile.owner === props.user._id) {
-    return (
-      <div>
-        <h4>{profile.name}</h4>
-        <p>Title: {profile.title}</p>
-        <p>Education: {profile.education}</p>
-        <p>Location: {profile.location}</p>
-        <p>Contact: {profile.contact}</p>
-        <p>Website: {profile.website}</p>
-        <p>Portfolio: {profile.portfolio}</p>
-        <p>Other Website: {profile.other}</p>
-        <p>Description: {profile.description}</p>
-        <p>Salary Requirements: {profile.salary}</p>
-        <button onClick={destroy}>Delete Profile</button>
-        <Link to={`/profiles/${props.match.params.id}/edit`}>
-          <button>Edit</button>
-        </Link>
-        <Link to="/profiles">Back to all Profiles</Link>
-        <Home />
-      </div>
-    )
-  }
   return (
     <div>
       <h4>{profile.name}</h4>
@@ -86,9 +64,13 @@ const Profile = props => {
       <p>Website: {profile.website}</p>
       <p>Portfolio: {profile.portfolio}</p>
       <p>Other Website: {profile.other}</p>
-      <p>About Me: {profile.description}</p>
-      <p>Salary: {profile.salary}</p>
-      <Link to="/profiles">Back to all Profiles</Link>
+      <p>Description: {profile.description}</p>
+      <p>Salary Requirements: {profile.salary}</p>
+      <button onClick={destroy}>Delete Profile</button>
+      <Link to={`/profiles/${props.match.params.id}/edit`}>
+        <button>Edit</button>
+      </Link>
+      <Link to="/profiles/owned">Back to My Profiles</Link>
       <Home />
     </div>
   )

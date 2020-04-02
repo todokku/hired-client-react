@@ -14,6 +14,7 @@ import Profile from '../routes/Profile'
 import ProfileEdit from '../routes/ProfileEdit'
 import ProfileCreate from '../routes/ProfileCreate'
 import ProfilesOwned from '../routes/ProfilesOwned'
+import ProfileOwned from '../routes/ProfileOwned'
 import Home from '../routes/Home'
 
 class App extends Component {
@@ -76,6 +77,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute exact user={user} path='/profiles/owned' render={() => (
             <ProfilesOwned msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute exact user={user} path='/profiles/owned/:id' render={({ match }) => (
+            <ProfileOwned match={match} msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>

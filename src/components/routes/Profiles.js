@@ -35,6 +35,7 @@ const Title = styled.p`
 `
 const Content = styled.h6`
   color: #00235c;
+  text-align: center;
 `
 
 const Description = styled.h5`
@@ -69,14 +70,13 @@ const Profiles = props => {
           <Name>{profile.name}</Name>
         </div>
         <div>
-          <Title>{profile.title} <Content> {profile.location}</Content> </Title>
+          <Title>{profile.title}</Title><Content>{profile.location}</Content>
         </div>
         <div>
           <Description>Short Description:</Description>
-          <Paragraph>{profile.name} is a {profile.title}
-           who is current located in {profile.location}...</Paragraph>
+          <Paragraph>{profile.name} is a {profile.title} who is current located in {profile.location}...</Paragraph>
         </div>
-        <Link to={`/profiles/${profile._id}`} primary>See More</Link>
+        <Link to={`/profiles/${profile._id}`}>See More</Link>
       </Candidates>
     </Inline>
   ))
