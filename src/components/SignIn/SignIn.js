@@ -55,10 +55,10 @@ class SignIn extends Component {
         variant: 'success'
       }))
       .then(() => history.push('/profiles'))
-      .catch(error => {
+      .catch(() => {
         this.setState({ email: '', password: '' })
         msgAlert({
-          heading: 'Sign In Failed with error: ' + error.message,
+          heading: 'Sign In Failed',
           message: messages.signInFailure,
           variant: 'danger'
         })

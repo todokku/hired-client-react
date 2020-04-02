@@ -37,9 +37,9 @@ const ProfileEdit = props => {
         message: messages.updateProfileSuccess,
         variant: 'success'
       }))
-      .catch(error => {
+      .catch(() => {
         props.msgAlert({
-          heading: 'Update Profile Failed' + error.message,
+          heading: 'Update Profile Failed',
           message: messages.updateFailure,
           variant: 'danger'
         })

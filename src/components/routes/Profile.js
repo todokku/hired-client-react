@@ -47,9 +47,9 @@ const Profile = props => {
         message: messages.deleteProfileSuccess,
         variant: 'success'
       }))
-      .catch(error => {
+      .catch(() => {
         props.msgAlert({
-          heading: 'Delete Profile Failed' + error.message,
+          heading: 'Delete Profile Failed',
           message: messages.deleteFailure,
           variant: 'danger'
         })

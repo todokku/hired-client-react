@@ -35,13 +35,14 @@ const Title = styled.p`
 `
 const Content = styled.h6`
   color: #00235c;
-  text-align: center;
+  float: right;
+  padding-bottom: 20px;
 `
 
 const Description = styled.h5`
   text-align: center;
   color: #edb442;
-  padding: 10px 0 0;
+  padding: 20px 0 0;
 `
 const Paragraph = styled.p`
   text-align: center;
@@ -72,10 +73,12 @@ const Profiles = props => {
         <div>
           <Title>{profile.title}</Title><Content>{profile.location}</Content>
         </div>
-        <div>
-          <Description>Short Description:</Description>
-          <Paragraph>{profile.name} is a {profile.title} who is current located in {profile.location}...</Paragraph>
-        </div>
+        <Description>
+          <div>
+            <Description>Short Description:</Description>
+            <Paragraph>{profile.name} is a {profile.title} who is current located in {profile.location}...</Paragraph>
+          </div>
+        </Description>
         <Link to={`/profiles/${profile._id}`}>See More</Link>
       </Candidates>
     </Inline>

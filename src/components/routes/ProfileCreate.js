@@ -44,9 +44,9 @@ const ProfileCreate = props => {
         message: messages.createProfileSuccess,
         variant: 'success'
       }))
-      .catch(error => {
+      .catch(() => {
         props.msgAlert({
-          heading: 'Create Profile Failed' + error.message,
+          heading: 'Create Profile Failed',
           message: messages.createFailure,
           variant: 'danger'
         })
