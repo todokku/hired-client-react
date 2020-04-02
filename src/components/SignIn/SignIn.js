@@ -106,8 +106,8 @@ class SignIn extends Component {
                 <ButtonS type="submit" variant="primary">Cancel</ButtonS>
               </Link>
             </SpaceDiv>
-            <Home />
           </Form>
+          <Home />
         </div>
       </div>
     )

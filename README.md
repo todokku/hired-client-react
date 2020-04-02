@@ -43,6 +43,8 @@ This project used Style Component CSS for styling. To install style Component:
 3. Run Style Component again: `npm install styled-components`
 
 4. The following package was installed to facilitate the styling of this page's footer: `npm install react-sticky-footer --save`
+5.  Smooth Scroll feature was added with the following package:
+  - `npm i react-scroll-to --save`
 
 
 ## About
