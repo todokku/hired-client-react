@@ -5,12 +5,21 @@ import styled, { css } from 'styled-components'
 import logo from './hired.png'
 import logoTwo from './Hired-navbar.png'
 import { Link } from 'react-router-dom'
+import Layout from '../../shared/Layout'
 
 const authenticatedOptions = (
   <Fragment>
+    <Nav.Link href="#create-profile">Create a Profile</Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
+
   </Fragment>
+)
+
+const authBody = (
+  <div>
+    <Layout />
+  </div>
 )
 
 const unauthenticatedOptions = (
@@ -26,7 +35,7 @@ const ButtonS = styled.button`
   border: 2px solid #00235c;
   background: #00235c;
   color: #fff;
-  margin: 100px 40px 70px 330px;
+  margin: 100px 50px 70px 340px;
   padding: 8px 60px;
   justifyContent: "center";
   alignItems: "center";
@@ -55,7 +64,7 @@ const unauthBody = (
 
 const alwaysOptions = (
   <Fragment>
-    <Nav.Link href='/'>Home</Nav.Link>
+    <Nav.Link href='#/'>Home</Nav.Link>
   </Fragment>
 )
 
@@ -103,7 +112,7 @@ const Header = ({ user }) => (
     <Body className="logo">
       <Logo src={logo} width="100" height="100" />
     </Body>
-    { !user ? unauthBody : authenticatedOptions}
+    { !user ? unauthBody : authBody}
   </div>
 )
 

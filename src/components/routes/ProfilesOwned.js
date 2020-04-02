@@ -48,11 +48,11 @@ const Paragraph = styled.p`
   padding: 5px 0;
 `
 
-const Profiles = props => {
+const ProfilesOwned = props => {
   const [profiles, setProfiles] = useState([])
   useEffect(() => {
     axios({
-      url: `${apiUrl}/profiles`,
+      url: `${apiUrl}/profiles/owned`,
       method: 'GET',
       headers: {
         Authorization: `Bearer ${props.user.token}`
@@ -89,4 +89,4 @@ const Profiles = props => {
   )
 }
 
-export default Profiles
+export default ProfilesOwned

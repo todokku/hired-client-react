@@ -3,7 +3,7 @@ import Footer from '../../shared/Footer'
 import styled from 'styled-components'
 
 const Foot = styled.div`
-  background: rgb(215,215,215);
+  background: rgba(255,255,255,.8);
 `
 
 const Home = () => (

@@ -7,7 +7,18 @@ import ProfileForm from '../../shared/ProfileForm'
 import Layout from '../../shared/Layout'
 
 const ProfileEdit = props => {
-  const [profile, setProfile] = useState({ name: '', title: '', education: '', description: '', location: '', salary: '' })
+  const [profile, setProfile] = useState(
+    { name: '',
+      title: '',
+      education: '',
+      description: '',
+      location: '',
+      salary: '',
+      contact: '',
+      website: '',
+      portfolio: '',
+      other: ''
+    })
   const [updated, setUpdate] = useState(false)
 
   useEffect(() => {

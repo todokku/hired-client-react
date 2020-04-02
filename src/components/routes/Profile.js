@@ -3,7 +3,6 @@ import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
-import Layout from '../../shared/Layout'
 
 const Profile = props => {
   const [profile, setProfile] = useState(null)
@@ -38,7 +37,7 @@ const Profile = props => {
   }
 
   if (!profile) {
-    return <p>Loading...</p>
+    return <h5>Your Profiles</h5>
   }
 
   if (deleted) {
@@ -49,31 +48,39 @@ const Profile = props => {
 
   if (profile.owner === props.user._id) {
     return (
-      <Layout>
+      <div>
         <h4>{profile.name}</h4>
         <p>Title: {profile.title}</p>
         <p>Education: {profile.education}</p>
-        <p>About Me: {profile.description}</p>
         <p>Location: {profile.location}</p>
-        <p>Salary: {profile.salary}</p>
+        <p>Contact: {profile.contact}</p>
+        <p>Website: {profile.website}</p>
+        <p>Portfolio: {profile.portfolio}</p>
+        <p>Other Website: {profile.other}</p>
+        <p>Description: {profile.description}</p>
+        <p>Salary Requirements: {profile.salary}</p>
         <button onClick={destroy}>Delete Profile</button>
         <Link to={`/profiles/${props.match.params.id}/edit`}>
           <button>Edit</button>
         </Link>
         <Link to="/profiles">Back to all Profiles</Link>
-      </Layout>
+      </div>
     )
   }
   return (
-    <Layout>
+    <div>
       <h4>{profile.name}</h4>
       <p>Title: {profile.title}</p>
       <p>Education: {profile.education}</p>
-      <p>About Me: {profile.description}</p>
       <p>Location: {profile.location}</p>
+      <p>Contact: {profile.contact}</p>
+      <p>Website: {profile.website}</p>
+      <p>Portfolio: {profile.portfolio}</p>
+      <p>Other Website: {profile.other}</p>
+      <p>About Me: {profile.description}</p>
       <p>Salary: {profile.salary}</p>
       <Link to="/profiles">Back to all Profiles</Link>
-    </Layout>
+    </div>
   )
 }
 

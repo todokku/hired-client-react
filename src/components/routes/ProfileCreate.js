@@ -4,10 +4,20 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import ProfileForm from '../../shared/ProfileForm'
-import Layout from '../../shared/Layout'
 
 const ProfileCreate = props => {
-  const [profile, setProfile] = useState({ name: '', title: '', education: '', description: '', location: '', salary: '' })
+  const [profile, setProfile] = useState(
+    { name: '',
+      title: '',
+      education: '',
+      description: '',
+      location: '',
+      salary: '',
+      contact: '',
+      website: '',
+      portfolio: '',
+      other: ''
+    })
   const [createdProfileId, setCreatedProfileId] = useState(null)
 
   const handleChange = event => {
@@ -36,14 +46,14 @@ const ProfileCreate = props => {
   }
 
   return (
-    <Layout>
+    <div>
       <ProfileForm
         profile={profile}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         cancelPath="/"
       />
-    </Layout>
+    </div>
   )
 }
 

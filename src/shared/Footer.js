@@ -5,12 +5,12 @@ const Footer = () => (
   <StickyFooter
     bottomThreshold={50}
     normalStyles={{
-      backgroundColor: '#fff',
+      backgroundColor: 'rgba(255,255,255,.10)',
       padding: '20px',
       margin: ' 100px 0 0'
     }}
     stickyStyles={{
-      backgroundColor: '#fff',
+      backgroundColor: 'rgba(255,255,255,.10)',
       padding: '1rem'
     }}
   >

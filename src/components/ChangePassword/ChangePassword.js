@@ -1,11 +1,32 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import { changePassword } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import styled from 'styled-components'
+import Home from '../routes/Home'
+
+const SpaceDiv = styled.div`
+  margin-bottom: 100px;
+`
+const ButtonS = styled.button`
+  text-align: center;
+  border-radius: 33px;
+  border: 2px solid #edb442;
+  background: #edb442;
+  color: #00235c;
+  padding: 8px 40px;
+  margin-top: 20px;
+  justifyContent: "center";
+  alignItems: "center";
+  :hover {
+background: #00235c;
+color: #fff;
+cursor: pointer;
+}
+`
 
 class ChangePassword extends Component {
   constructor () {
@@ -51,34 +72,40 @@ class ChangePassword extends Component {
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Change Password</h3>
           <Form onSubmit={this.onChangePassword}>
-            <Form.Group controlId="oldPassword">
-              <Form.Label>Old password</Form.Label>
-              <Form.Control
-                required
-                name="oldPassword"
-                value={oldPassword}
-                type="password"
-                placeholder="Old Password"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="newPassword">
-              <Form.Label>New Password</Form.Label>
-              <Form.Control
-                required
-                name="newPassword"
-                value={newPassword}
-                type="password"
-                placeholder="New Password"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
+            <SpaceDiv>
+              <Form.Group controlId="oldPassword">
+                <Form.Label>Old password</Form.Label>
+                <Form.Control
+                  required
+                  name="oldPassword"
+                  value={oldPassword}
+                  type="password"
+                  placeholder="Old Password"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="newPassword">
+                <Form.Label>New Password</Form.Label>
+                <Form.Control
+                  required
+                  name="newPassword"
+                  value={newPassword}
+                  type="password"
+                  placeholder="New Password"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <ButtonS
+                variant="primary"
+                type="submit"
+              >
+                Submit
+              </ButtonS> {' '}
+              <Link to="/">
+                <ButtonS type="submit" variant="primary">Cancel</ButtonS>
+              </Link>
+            </SpaceDiv>
+            <Home />
           </Form>
         </div>
       </div>
