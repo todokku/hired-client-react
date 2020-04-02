@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import ProfileForm from '../../shared/ProfileForm'
+import messages from '../AutoDismissAlert/messages'
 
 const ProfileCreate = props => {
   const [profile, setProfile] = useState(
@@ -38,7 +39,18 @@ const ProfileCreate = props => {
       data: { profile }
     })
       .then(res => setCreatedProfileId(res.data.profile._id))
-      .catch()
+      .then(() => props.msgAlert({ // remove the props param from the .then()
+        heading: 'Create Profile Success',
+        message: messages.createProfileSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Create Profile Failed' + error.message,
+          message: messages.createFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (createdProfileId) {

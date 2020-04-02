@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
 import styled from 'styled-components'
+import messages from '../AutoDismissAlert/messages'
 import Home from './Home'
 
 const Your = styled.h2`
@@ -41,7 +42,18 @@ const Profile = props => {
       }
     })
       .then(() => setDeleted(true))
-      .catch()
+      .then(() => props.msgAlert({ // remove the props param from the .then()
+        heading: 'Delete Profile Success',
+        message: messages.deleteProfileSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Delete Profile Failed' + error.message,
+          message: messages.deleteFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   if (!profile) {
@@ -50,7 +62,7 @@ const Profile = props => {
 
   if (deleted) {
     return <Redirect to={
-      { pathname: '/profiles', state: { msg: 'Profile succesfully deleted!' } }
+      { pathname: '/profiles' }
     } />
   }
 

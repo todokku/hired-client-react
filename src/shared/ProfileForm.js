@@ -143,7 +143,7 @@ const ProfileForm = ({ profile, handleSubmit, handleChange, cancelPath }) => (
               maxLength={3000}
               value={profile.description}
               name="description"
-              tyoe="text"
+              type="text"
               placeholder="About you"
               onChange={handleChange}
             />

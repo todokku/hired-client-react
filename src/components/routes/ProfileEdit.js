@@ -5,6 +5,7 @@ import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import ProfileForm from '../../shared/ProfileForm'
 import Layout from '../../shared/Layout'
+import messages from '../AutoDismissAlert/messages'
 
 const ProfileEdit = props => {
   const [profile, setProfile] = useState(
@@ -31,7 +32,18 @@ const ProfileEdit = props => {
     })
       // Make sure to update this.setState to our hooks setMovie function
       .then(res => setProfile(res.data.profile))
-      .catch()
+      .then(() => props.msgAlert({ // remove the props param from the .then()
+        heading: 'Update Profile Success',
+        message: messages.updateProfileSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        props.msgAlert({
+          heading: 'Update Profile Failed' + error.message,
+          message: messages.updateFailure,
+          variant: 'danger'
+        })
+      })
   }, [])
 
   const handleChange = event => {
