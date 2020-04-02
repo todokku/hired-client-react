@@ -3,7 +3,7 @@ import { Link, Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 import apiUrl from '../../apiConfig'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import messages from '../AutoDismissAlert/messages'
 import Home from './Home'
 
@@ -11,6 +11,76 @@ const Your = styled.h2`
   text-align: center;
   color: #00235c;
   padding: 20px 0 40px;
+`
+
+const Candidate = styled.div`
+  display: inline-block;
+  vertical-align: top;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(215,215,215,.8);
+  height: auto;
+  width: 650px;
+  margin: 15px 55px;
+  padding: 20px 30px;
+`
+
+const ButtonS = styled.button`
+  text-align: center;
+  border-radius: 33px;
+  border: 2px solid #edb442;
+  background: #edb442;
+  color: #00235c;
+  padding: 5px 45px;
+  margin-top: 20px;
+  justifyContent: "center";
+  alignItems: "center";
+  :hover {
+    background: #00235c;
+    color: #fff;
+    cursor: pointer;
+}
+  ${props =>
+    props.primary &&
+    css`
+    border: 2px solid #94140a;
+    background: #94140a;
+    color: #fff;
+    padding: 5px 20px;
+    :hover {
+      background: #e30000;
+    }
+  `};
+`
+
+const SpaceLink = styled.div`
+  padding 10px;
+`
+
+const Welcome = styled.h3`
+  text-align: center;
+  color: #d1941b;
+`
+
+const Fields = styled.p`
+  color: #00235c;
+`
+
+const Title = styled.p`
+  font-style: italic;
+  color: #d1941b;
+`
+
+const SideCandidate = styled.div`
+  display: inline-block;
+  vertical-align: top;
+  background: rgba(113,185,255,.4);
+  border-radius: 5px;
+  height: auto;
+  width: 300px;
+  margin: 15px 25px;
+  padding: 20px;
+  text-align: center;
 `
 
 const Profile = props => {
@@ -62,27 +132,37 @@ const Profile = props => {
 
   if (deleted) {
     return <Redirect to={
-      { pathname: '/profiles', state: { msg: 'Profile succesfully deleted!' } }
+      { pathname: '/profiles' }
     } />
   }
 
   return (
     <div>
-      <h4>{profile.name}</h4>
-      <p>Title: {profile.title}</p>
-      <p>Education: {profile.education}</p>
-      <p>Location: {profile.location}</p>
-      <p>Contact: {profile.contact}</p>
-      <p>Website: {profile.website}</p>
-      <p>Portfolio: {profile.portfolio}</p>
-      <p>Other Website: {profile.other}</p>
-      <p>Description: {profile.description}</p>
-      <p>Salary Requirements: {profile.salary}</p>
-      <button onClick={destroy}>Delete Profile</button>
-      <Link to={`/profiles/${props.match.params.id}/edit`}>
-        <button>Edit</button>
-      </Link>
-      <Link to="/profiles/owned">Back to My Profiles</Link>
+      <SideCandidate>
+        <h2>{profile.name}</h2>
+        <Title>{profile.title}</Title>
+        <Fields>Location: {profile.location}</Fields>
+        <Fields>Contact: {profile.contact}</Fields>
+        <ButtonS primary onClick={destroy}>Delete Profile</ButtonS> {' '}
+        <Link to={`/profiles/${props.match.params.id}/edit`}>
+          <ButtonS>Edit</ButtonS>
+        </Link>
+        <SpaceLink>
+          <Link to="/profiles">Back to all Profiles</Link>
+        </SpaceLink>
+      </SideCandidate>
+      <Candidate>
+        <Welcome>Welcome to my profile</Welcome>
+        <Fields><strong>Name:</strong> {profile.name}</Fields>
+        <Fields><strong>Title:</strong> {profile.title}</Fields>
+        <Fields><strong>Education:</strong> {profile.education}</Fields>
+        <Fields><strong>Website:</strong> {profile.website}</Fields>
+        <Fields><strong>Portfolio:</strong> {profile.portfolio}</Fields>
+        <Fields><strong>Other Website:</strong> {profile.other}</Fields>
+        <Fields><strong>Description:</strong></Fields>
+        <Fields>{profile.description}</Fields>
+        <Fields><strong>Salary Requirements:</strong> {profile.salary}</Fields>
+      </Candidate>
       <Home />
     </div>
   )

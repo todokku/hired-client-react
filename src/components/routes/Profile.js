@@ -25,6 +25,24 @@ const Candidate = styled.div`
   padding: 20px 30px;
 `
 
+const SpaceLink = styled.div`
+  padding 10px;
+`
+
+const Welcome = styled.h3`
+  text-align: center;
+  color: #d1941b;
+`
+
+const Fields = styled.p`
+  color: #00235c;
+`
+
+const Title = styled.p`
+  font-style: italic;
+  color: #d1941b;
+`
+
 const SideCandidate = styled.div`
   display: inline-block;
   vertical-align: top;
@@ -123,23 +141,28 @@ const Profile = props => {
       <div>
         <SideCandidate>
           <h2>{profile.name}</h2>
-          <p>Location: {profile.location}</p>
-          <p>Contact: {profile.contact}</p>
+          <Title>{profile.title}</Title>
+          <Fields>Location: {profile.location}</Fields>
+          <Fields>Contact: {profile.contact}</Fields>
           <ButtonS primary onClick={destroy}>Delete Profile</ButtonS> {' '}
           <Link to={`/profiles/${props.match.params.id}/edit`}>
             <ButtonS>Edit</ButtonS>
           </Link>
-          <Link to="/profiles">Back to all Profiles</Link>
+          <SpaceLink>
+            <Link to="/profiles">Back to all Profiles</Link>
+          </SpaceLink>
         </SideCandidate>
         <Candidate>
-          <h4>{profile.name}</h4>
-          <p>Title: {profile.title}</p>
-          <p>Education: {profile.education}</p>
-          <p>Website: {profile.website}</p>
-          <p>Portfolio: {profile.portfolio}</p>
-          <p>Other Website: {profile.other}</p>
-          <p>Description: {profile.description}</p>
-          <p>Salary Requirements: {profile.salary}</p>
+          <Welcome>Welcome to my profile</Welcome>
+          <Fields><strong>Name:</strong> {profile.name}</Fields>
+          <Fields><strong>Title:</strong> {profile.title}</Fields>
+          <Fields><strong>Education:</strong> {profile.education}</Fields>
+          <Fields><strong>Website:</strong> {profile.website}</Fields>
+          <Fields><strong>Portfolio:</strong> {profile.portfolio}</Fields>
+          <Fields><strong>Other Website:</strong> {profile.other}</Fields>
+          <Fields><strong>Description:</strong></Fields>
+          <Fields>{profile.description}</Fields>
+          <Fields><strong>Salary Requirements:</strong> {profile.salary}</Fields>
         </Candidate>
         <Home />
       </div>
@@ -147,18 +170,26 @@ const Profile = props => {
   }
   return (
     <div>
+      <SideCandidate>
+        <h2>{profile.name}</h2>
+        <Title>{profile.title}</Title>
+        <Fields>Location: {profile.location}</Fields>
+        <Fields>Contact: {profile.contact}</Fields>
+        <SpaceLink>
+          <Link to="/profiles">Back to all Profiles</Link>
+        </SpaceLink>
+      </SideCandidate>
       <Candidate>
-        <h4>{profile.name}</h4>
-        <p>Title: {profile.title}</p>
-        <p>Education: {profile.education}</p>
-        <p>Location: {profile.location}</p>
-        <p>Contact: {profile.contact}</p>
-        <p>Website: {profile.website}</p>
-        <p>Portfolio: {profile.portfolio}</p>
-        <p>Other Website: {profile.other}</p>
-        <p>About Me: {profile.description}</p>
-        <p>Salary: {profile.salary}</p>
-        <Link to="/profiles">Back to all Profiles</Link>
+        <Welcome>Welcome to my profile</Welcome>
+        <Fields><strong>Name:</strong> {profile.name}</Fields>
+        <Fields><strong>Title:</strong> {profile.title}</Fields>
+        <Fields><strong>Education:</strong> {profile.education}</Fields>
+        <Fields><strong>Website:</strong> {profile.website}</Fields>
+        <Fields><strong>Portfolio:</strong> {profile.portfolio}</Fields>
+        <Fields><strong>Other Website:</strong> {profile.other}</Fields>
+        <Fields><strong>Description:</strong></Fields>
+        <Fields>{profile.description}</Fields>
+        <Fields><strong>Salary Requirements:</strong> {profile.salary}</Fields>
       </Candidate>
       <Home />
     </div>
