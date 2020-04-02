@@ -15,11 +15,11 @@ const Candidates = styled.div`
   background: #fafafa;
   border-radius: 10px;
   box-shadow: 10px 10px 10px rgba(215,215,215,.8);
-  font-size: 20px;
   height: 300px;
   width: 500px;
   margin: 15px 25px;
-  padding: 20px;
+  padding: 20px 30px;
+  text-align: right;
 `
 
 const Name = styled.h2`
@@ -35,14 +35,13 @@ const Title = styled.p`
 `
 const Content = styled.h6`
   color: #00235c;
-  float: right;
-  padding-bottom: 20px;
+  text-align: center;
 `
 
 const Description = styled.h5`
   text-align: center;
-  color: #edb442;
-  padding: 20px 0 0;
+  color: #d1941b;
+  padding: 10px 0 0;
 `
 const Paragraph = styled.p`
   text-align: center;
