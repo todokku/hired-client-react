@@ -1,6 +1,6 @@
 # Hired
 
-Hired is a Full Stack project in which this is the front-end repository. To check the back-end repository which is built on a Express API click [HERE](https://github.com/patybn3/hired-api). This application used Heroku for version control which can be accessed [HERE](https://sleepy-coast-97158.herokuapp.com/) . The vision behind this application is to build a virtual "meet an hire" where an employer, or authenticated user can look for candidates. The first version of this app simple display a list of the candidates. Second version will include picatures (app is already set up for AWS), posts and likes and the third version will allow a user to search for key words.
+Hired is a Full Stack project in which this is the front-end repository. To check the back-end repository which is built on a Express API click [HERE](https://github.com/patybn3/hired-api). This application used Heroku for version control which can be accessed [HERE](https://sleepy-coast-97158.herokuapp.com/) . The vision behind this application is to build a virtual "meet an hire" where an employer, or authenticated user can look for candidates. The first version of this app simply displays a list of the candidates. Second version will include pictures (app is already set up for AWS), posts and likes and the third version will allow a user to search for key words.
 
 ## Template
 
@@ -34,13 +34,13 @@ it runs successfully.
 
 ## Other dependencies
 
-This project used Style Component CSS for styling. To install style Component:
+This project used Styles Components CSS for styling. To install styled components:
 1. `npm install styled-components` - You might see the following message:
   - `npm WARN bootstrap@4.3.1 requires a peer of jquery@1.9.1 - 3 but none is installed. You must install peer dependencies yourself.
 
   + styled-components@5.0.1
   added 19 packages from 14 contributors in 7.38s`
-2. In this case, install the following dependencied:
+2. In this case, install the following dependencies:
   - `npm install --save bootstrap`
   - `npm install jquery@1.9.1`
   - `npm install popper.js --save`
@@ -59,7 +59,7 @@ Version Control Demonstrate using version control by:
 
 Sharing your work through a git repository hosted on Github. Making frequent, cohesive commits dating back to the first day of the project week. 1 commit on the first day of project week on both repos. At least 1 commit every day during project week (not necessarily on both repos).
 
-Signup with email, password, and password confirmation. - (First and Last name added, to be used on stretch goal) Login with email and password. Logout when logged in. Change password with current and new password. Signup and Signin must only be available to not signed in users. Logout and Change password must only be available to signed in users. Give feedback to the user after each action's success or failure. All forms must clear after submit success and user sign-out (Optional) Reset form to initial state on failure Client Specifications Use a front-end Javascript app to communicate with your API (both read and write) and render data that it receives in the browser.
+Signup with email, password, and password confirmation. Login with email and password. Logout when logged in. Change password with current and new password. Signup and Signin must only be available to not signed in users. Logout and Change password must only be available to signed in users. Give feedback to the user after each action's success or failure. All forms must clear after submit success and user sign-out (Optional) Reset form to initial state on failure Client Specifications Use a front-end Javascript app to communicate with your API (both read and write) and render data that it receives in the browser.
 Create a joint table for a resource and allow the user to create, edit and delete resources.
 
 Your app must not:
