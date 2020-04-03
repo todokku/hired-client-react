@@ -52,7 +52,7 @@ const ProfilesOwned = props => {
   const [profiles, setProfiles] = useState([])
   useEffect(() => {
     axios({
-      url: `${apiUrl}/profiles/owned`,
+      url: `${apiUrl}/profiles-owned`,
       method: 'GET',
       headers: {
         Authorization: `Bearer ${props.user.token}`
@@ -75,7 +75,7 @@ const ProfilesOwned = props => {
           <Description>Short Description:</Description>
           <Paragraph>{profile.name} is a {profile.title} who is current located in {profile.location}...</Paragraph>
         </div>
-        <Link to={`/profiles/owned/${profile._id}`}>See More</Link>
+        <Link to={`/profiles-owned/${profile._id}`}>See More</Link>
       </Candidates>
     </Inline>
   ))

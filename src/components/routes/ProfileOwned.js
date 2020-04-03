@@ -92,7 +92,7 @@ const Profile = props => {
   // similar to componentDidMount
   useEffect(() => {
     axios({
-      url: `${apiUrl}/profiles/owned/${props.match.params.id}`,
+      url: `${apiUrl}/profiles-owned/${props.match.params.id}`,
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${props.user.token}`

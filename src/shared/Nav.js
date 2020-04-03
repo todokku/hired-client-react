@@ -33,7 +33,7 @@ cursor: pointer;
 
 const Nav = () => (
   <nav>
-    <Link to="/profiles/owned">
+    <Link to="/profiles-owned">
       <ButtonS secondary type="submit">My Profiles</ButtonS>
     </Link>
     <Link to="/profiles">

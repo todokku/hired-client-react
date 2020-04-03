@@ -75,10 +75,10 @@ class App extends Component {
           <AuthenticatedRoute exact user={user} path='/profiles/:id/edit' render={({ match }) => (
             <ProfileEdit match={match} msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute exact user={user} path='/profiles/owned' render={() => (
+          <AuthenticatedRoute exact user={user} path='/profiles-owned' render={() => (
             <ProfilesOwned msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute exact user={user} path='/profiles/owned/:id' render={({ match }) => (
+          <AuthenticatedRoute exact user={user} path='/profiles-owned/:id' render={({ match }) => (
             <ProfileOwned match={match} msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
