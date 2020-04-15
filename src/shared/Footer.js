@@ -1,21 +1,16 @@
 import React from 'react'
-import StickyFooter from 'react-sticky-footer'
+import styled from 'styled-components'
+
+const Foot = styled.div`
+  background: rgba(255,255,255,.10);
+  padding: 20px;
+  margin: auto;
+`
 
 const Footer = () => (
-  <StickyFooter
-    bottomThreshold={50}
-    normalStyles={{
-      backgroundColor: 'rgba(255,255,255,.10)',
-      padding: '20px',
-      margin: ' 100px 0 0'
-    }}
-    stickyStyles={{
-      backgroundColor: 'rgba(255,255,255,.10)',
-      padding: '1rem'
-    }}
-  >
+  <Foot>
       &copy; {new Date().getFullYear()} Copyright: <a href="https://www.pantlitz.dev"> Patricia Antlitz </a>
-  </StickyFooter>
+  </Foot>
 
 )
 
