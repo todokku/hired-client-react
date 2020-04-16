@@ -74,15 +74,72 @@ cursor: pointer;
     css`
       padding: 8px 65px;
     `};
+
+    @media (max-width: 1024px) {
+       margin: -10px 3px 20px 250px;
+       font-size: 15px;
+       padding: 8px 60px;
+       ${props =>
+    props.mobile375signUp &&
+         css`
+           padding: 8px 45px;
+         `};
+         ${props =>
+    props.mobile375signIn &&
+           css`
+             padding: 8px 49px;
+           `};
+  }
+
+  @media (max-width: 768px) {
+     margin: -10px 3px 20px 170px;
+     font-size: 15px;
+     padding: 8px 60px;
+     ${props =>
+    props.mobile375signUp &&
+       css`
+         padding: 8px 45px;
+       `};
+       ${props =>
+    props.mobile375signIn &&
+         css`
+           padding: 8px 49px;
+         `};
+}
+    @media (max-width: 425px) {
+       margin: -20px 30% 20px;
+       font-size: 15px;
+       padding: 8px 60px;
+       ${props =>
+    props.mobile425signUp &&
+         css`
+           padding: 8px 55px;
+         `};
+ }
+   @media (max-width: 375px) {
+      margin: -20px 30% 20px;
+      font-size: 15px;
+      padding: 8px 60px;
+      ${props =>
+    props.mobile375signUp &&
+        css`
+          padding: 8px 45px;
+        `};
+        ${props =>
+    props.mobile375signIn &&
+          css`
+            padding: 8px 49px;
+          `};
+}
 `
 
 const unauthBody = (
   <div>
     <Link to="/sign-up">
-      <ButtonS type="submit">Sign Up</ButtonS>
+      <ButtonS type="submit" mobile425signUp mobile375signUp>Sign Up</ButtonS>
     </Link>
     <Link to="sign-in">
-      <ButtonS type="submit">Sign In</ButtonS>
+      <ButtonS type="submit" primary mobile375signIn>Sign In</ButtonS>
     </Link>
     <MyScroll />
   </div>
