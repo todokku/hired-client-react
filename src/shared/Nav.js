@@ -29,6 +29,46 @@ cursor: pointer;
         padding: 5px 35px;
         margin: 0 0 0 29.5%;
       `};
+
+      @media (max-width: 768px) {
+         margin: 10px 40px 50px 60px;
+    }
+
+      @media (max-width: 425px) {
+        margin: 0 5px 20px 140px;
+        padding: 5px 20px;
+         ${props =>
+    props.primary &&
+             css`
+               margin: 0 5px 20px 40px;
+               padding: 5px 20px;
+             `};
+
+             ${props =>
+    props.secondary &&
+               css`
+                 margin: 0 5px 20px 80px;
+                 padding: 5px 20px;
+               `};
+     }
+
+       @media (max-width: 375px) {
+         margin: 0 5px 20px 110px;
+         padding: 5px 20px;
+          ${props =>
+    props.primary &&
+              css`
+                margin: 0 5px 20px 35px;
+                padding: 5px 20px;
+              `};
+
+              ${props =>
+    props.secondary &&
+                css`
+                  margin: 0 5px 20px 50px;
+                  padding: 5px 20px;
+                `};
+    }
 `
 
 const Nav = () => (
