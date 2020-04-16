@@ -20,6 +20,26 @@ const Candidates = styled.div`
   margin: 15px 25px;
   padding: 20px 30px;
   text-align: right;
+
+  @media (max-width: 1024px) {
+     width: 430px;
+     margin: 15px 15px;
+}
+
+  @media (max-width: 768px) {
+    width: 700px;
+    margin: 15px 0;
+}
+  @media (max-width: 425px) {
+    height: 100%;
+    width: 400px;
+    margin: 10px 0;
+}
+ @media (max-width: 375px) {
+   height: 100%;
+   width: 100%;
+   margin: 10px 0;
+}
 `
 
 const Name = styled.h2`
