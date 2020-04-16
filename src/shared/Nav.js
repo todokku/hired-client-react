@@ -31,7 +31,7 @@ cursor: pointer;
       `};
 
       @media (max-width: 768px) {
-         margin: 10px 40px 50px 60px;
+         margin: 10px 5px 50px 80px;
     }
 
       @media (max-width: 425px) {

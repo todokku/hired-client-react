@@ -23,6 +23,16 @@ const Candidate = styled.div`
   width: 650px;
   margin: 15px 55px;
   padding: 20px 30px;
+
+  @media (max-width: 1024px) {
+     width: 600px;
+     margin: 15px 15px;
+}
+
+  @media (max-width: 768px) {
+     width: 100%;
+     margin: 0;
+}
 `
 
 const SpaceLink = styled.div`
@@ -53,6 +63,16 @@ const SideCandidate = styled.div`
   margin: 15px 25px;
   padding: 20px;
   text-align: center;
+
+  @media (max-width: 1024px) {
+     width: 250px;
+     margin: 15px 15px;
+}
+
+  @media (max-width: 768px) {
+     width: 100%;
+     margin: 0 0 10px 0;
+}
 `
 
 const ButtonS = styled.button`
