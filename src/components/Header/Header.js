@@ -60,7 +60,7 @@ const ButtonS = styled.button`
   border: 2px solid #00235c;
   background: #00235c;
   color: #fff;
-  margin: 60px 50px 70px 340px;
+  margin: -20px 50px 70px 340px;
   padding: 8px 60px;
   justifyContent: "center";
   alignItems: "center";
@@ -95,22 +95,52 @@ const alwaysOptions = (
 )
 
 const SecondNav = styled.section`
-  padding: 160px;
+  padding: 140px;
   margin: auto;
   background: rgb(113,185,255);
   background: radial-gradient(circle, rgba(113,185,255,1) 0%, rgba(45,110,187,1) 100%);
 `
 
-const Logo = styled.img`
-  margin: -50px 645px 50px;
-`
-
-const Body = styled.div`
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(215,215,215,1) 100%);
-`
 const Title = styled.h5`
   margin: 6px;
+`
+
+const Circle = styled.div`
+  border-radius: 50%;
+  background-color: #3984cc;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  opacity: 0;
+  animation: scaleIn 4s infinite cubic-bezier(.36, .11, .89, .32);
+  @keyframes scaleIn {
+  from {
+    transform: scale(.5, .5);
+    opacity: .5;
+  }
+  to {
+    transform: scale(2.5, 2.5);
+    opacity: 0;
+  }
+}
+`
+
+const Container = styled.div`
+    /* width: 600px; */
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+`
+
+const Item = styled.div`
+  z-index: 100;
+  padding: 5px;
+`
+const OuterContainer = styled.div`
+  margin-top: -200px;
 `
 
 const Header = ({ user }) => (
@@ -135,9 +165,17 @@ const Header = ({ user }) => (
     </Navbar>
     <SecondNav>
     </SecondNav>
-    <Body className="logo">
-      <Logo src={logo} width="100" height="100" />
-    </Body>
+    <OuterContainer id="outerContainer">
+      <Container id="container">
+        <Item id="item">
+          <img src={logo} width="100" height="100" />
+        </Item>
+        <Circle className="circle" style={{ animationDelay: '-3s' }}></Circle>
+        <Circle className="circle" style={{ animationDelay: '-2s' }}></Circle>
+        <Circle className="circle" style={{ animationDelay: '-1s' }}></Circle>
+        <Circle className="circle" style={{ animationDelay: '0s' }}></Circle>
+      </Container>
+    </OuterContainer>
     { !user ? unauthBody : authBody}
   </div>
 )
