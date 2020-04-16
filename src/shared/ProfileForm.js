@@ -36,15 +36,6 @@ const ProfileForm = ({ profile, handleSubmit, handleChange, cancelPath }) => (
       <h3>Create a Profile</h3>
       <Form onSubmit={handleSubmit}>
         <SpaceDiv>
-          <Form.Group controlId="file" encType="multipart/form-data">
-            <Form.Label>Upload Your Picture</Form.Label>
-            <Form.Control
-              type="file"
-              value={profile.profileUrl}
-              name="file"
-              onChange={handleChange}
-            />
-          </Form.Group>
           <Form.Group controlId="name">
             <Form.Label>Name</Form.Label>
             <Form.Control
